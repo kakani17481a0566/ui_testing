@@ -133,7 +133,7 @@ exports.config = {
     reporters: [['allure', {
         outputDir: 'allure-results',
         disableWebdriverStepsReporting: true,
-        disableWebdriverScreenshotsReporting: true,
+        disableWebdriverScreenshotsReporting: false,
         useCucumberStepReporter: true
     }]],
 
@@ -287,7 +287,13 @@ exports.config = {
 },
 
 // You can also use before hooks to perform any setup, like creating directories
-
+before: function (capabilities, specs) {
+    // Ensure the screenshots directory exists before running tests
+    const screenshotDir = './screenshots';
+    if (!fs.existsSync(screenshotDir)){
+        fs.mkdirSync(screenshotDir);  // Create the directory if it doesn't exist
+    }
+},
     
 
     /**

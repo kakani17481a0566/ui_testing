@@ -144,18 +144,6 @@ Then(/^I scroll until I find the element located by "(.*?)"$/, async (locatorKey
 const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
 
 // Ensure the screenshots directory exists
-const screenshotsDir = './reports/html-reports/screenshots';
-if (!fs.existsSync(screenshotsDir)) {
-    fs.mkdirSync(screenshotsDir, { recursive: true });
-}
-
-// Define the screenshot path
-const screenshotPath = `${screenshotsDir}/screenshot-${timestamp}.png`;
-
-// Capture the screenshot
-await browser.saveScreenshot(screenshotPath);
-console.log(`Screenshot saved at: ${screenshotPath}`);
-
 
 
 
@@ -186,7 +174,7 @@ Then(/^I should verify that a CSV file is downloaded$/, async () => {
 
 Then(/^I should verify that a PDF file is downloaded$/, async () => {
     const downloadPath = path.join(os.homedir(), 'Downloads'); // Dynamically get the Downloads folder
-    const expectedFile = path.join(downloadPath, 'internal_marks.pdf');
+    const expectedFile = path.join(downloadPath, 'Internal_Marks_Report.pdf');
 
     console.log(`Checking if PDF file exists at: ${expectedFile}`);
     await browser.pause(3000); // Pause to allow file download
