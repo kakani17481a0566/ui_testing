@@ -39,6 +39,8 @@ export default {
         CALCULATE_BUTTON: "//button[@type='button' and contains(@class, 'btn-success') and contains(text(), 'Calculate')]",
         RESET_BUTTON: "//button[contains(text(), 'Reset')]",
         EXPORT_BUTTON: "//button[@id='exportButton']",
+        EXPORT_PDF_BUTTON: "//button[@id='exportPdfButton']",
+
 
 
         // Result Section

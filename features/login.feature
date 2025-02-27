@@ -16,6 +16,8 @@ Feature: The Internet Guinea Pig Website
     Then the element located by "PAGE_TITLE" should contain the text "SRGEC R20 BATCH INTERNAL MARKS CALCULATOR"
 
 
+
+
   @mid1_headers
   Scenario: The MID 1 headers should be correct
     Given I visit the r20 page
@@ -24,7 +26,7 @@ Feature: The Internet Guinea Pig Website
     Then the element located by "MID1_OBJ_LABEL" should contain the text "Obj 1:"
     Then the element located by "MID1_DES_LABEL" should contain the text "Des 1:"
     Then the element located by "MID1_ASSIGN_LABEL" should contain the text "Assign 1:"
-    Then I should take a screenshot
+    
 
 
   @mid2_headers
@@ -35,6 +37,7 @@ Feature: The Internet Guinea Pig Website
     Then the element located by "MID2_OBJ_LABEL" should contain the text "Obj 2:"
     Then the element located by "MID2_DES_LABEL" should contain the text "Des 2:"
     Then the element located by "MID2_ASSIGN_LABEL" should contain the text "Assign 2:"
+
 
 
   @buttons_mid1_obj
@@ -109,24 +112,16 @@ Feature: The Internet Guinea Pig Website
     Then I pass the value "5" to the element located by "MID1_OBJ_INPUT1"
     Then I click on the element located by "MID2_OBJ_INPUT2"
     Then I pass the value "5" to the element located by "MID2_OBJ_INPUT2"
-
     Then I click on the element located by "MID1_DES_INPUT1"
     Then I pass the value "5" to the element located by "MID1_DES_INPUT1"
-
     Then I click on the element located by "MID2_DES_INPUT2"
     Then I pass the value "5" to the element located by "MID2_DES_INPUT2"
-
     Then I click on the element located by "MID1_ASSIGN_INPUT1"
     Then I pass the value "5" to the element located by "MID1_ASSIGN_INPUT1"
-
     Then I click on the element located by "MID2_ASSIGN_INPUT2"
     Then I pass the value "5" to the element located by "MID2_ASSIGN_INPUT2"
-
-    Then the element located by "CALCULATE_BUTTON" should contain the text "Calculate Internal Marks"
-    Then I should take a screenshot
+    Then the element located by "CALCULATE_BUTTON" should contain the text "Calculate Internal Marks"    
     Then I click on the element located by "CALCULATE_BUTTON"
-
-    Then I should take a screenshot
     When I wait for 5 seconds
 
   @buttons_all_correct
@@ -137,30 +132,21 @@ Feature: The Internet Guinea Pig Website
     Then I pass the value "5" to the element located by "MID1_OBJ_INPUT1"
     Then I click on the element located by "MID2_OBJ_INPUT2"
     Then I pass the value "5" to the element located by "MID2_OBJ_INPUT2"
-
     Then I click on the element located by "MID1_DES_INPUT1"
     Then I pass the value "5" to the element located by "MID1_DES_INPUT1"
-
     Then I click on the element located by "MID2_DES_INPUT2"
     Then I pass the value "5" to the element located by "MID2_DES_INPUT2"
-
     Then I click on the element located by "MID1_ASSIGN_INPUT1"
     Then I pass the value "5" to the element located by "MID1_ASSIGN_INPUT1"
-
     Then I click on the element located by "MID2_ASSIGN_INPUT2"
     Then I pass the value "5" to the element located by "MID2_ASSIGN_INPUT2"
-
-    Then the element located by "CALCULATE_BUTTON" should contain the text "Calculate Internal Marks"
-    Then I should take a screenshot
+    Then the element located by "CALCULATE_BUTTON" should contain the text "Calculate Internal Marks"    
     Then I click on the element located by "CALCULATE_BUTTON"
     When I wait for 5 seconds
     Then I click on the element located by "OBJ_LABEL"
     Then the element located by "OBJ_LABEL" should contain the text "OBJ"
     Then the element located by "DES_LABEL" should contain the text "DES"
-
     Then the element located by "ASSIGN_LABEL" should contain the text "ASSIGN"
-
-
     Then the element located by "SUM_LABEL" should contain the text "SUM OF OBJ + DES + Assign"
     Then the element located by "BEST_MID_LABEL" should contain the text "Best MID"
     Then the element located by "LEAST_MID_LABEL" should contain the text "Least MID"
@@ -187,8 +173,7 @@ Feature: The Internet Guinea Pig Website
     Then I click on the element located by "MID2_ASSIGN_INPUT2"
     Then I pass the value "<MID2_ASSIGN>" to the element located by "MID2_ASSIGN_INPUT2"
     Then the element located by "CALCULATE_BUTTON" should contain the text "Calculate Internal Marks"
-    Then I click on the element located by "CALCULATE_BUTTON"
-    Then I should take a screenshot
+    Then I click on the element located by "CALCULATE_BUTTON"    
     When I wait for 5 seconds
 
     Examples:
@@ -223,14 +208,8 @@ Feature: The Internet Guinea Pig Website
     Then I click on the element located by "MID2_ASSIGN_INPUT2"
     Then I pass the value "<MID2_ASSIGN>" to the element located by "MID2_ASSIGN_INPUT2"
     Then the element located by "CALCULATE_BUTTON" should contain the text "Calculate Internal Marks"
-    Then I click on the element located by "CALCULATE_BUTTON"
-    Then I should take a screenshot
+    Then I click on the element located by "CALCULATE_BUTTON"    
     When I wait for 5 seconds
-
-
-
-
-
 
     Examples:
       | MID1_OBJ | MID2_OBJ | MID1_DES | MID2_DES | MID1_ASSIGN | MID2_ASSIGN |
@@ -260,16 +239,12 @@ Feature: The Internet Guinea Pig Website
     Then I click on the element located by "MID2_ASSIGN_INPUT2"
     Then I pass the value "<MID2_ASSIGN>" to the element located by "MID2_ASSIGN_INPUT2"
     Then the element located by "CALCULATE_BUTTON" should contain the text "Calculate Internal Marks"
-    Then I click on the element located by "CALCULATE_BUTTON"
-    Then I should take a screenshot
+    Then I click on the element located by "CALCULATE_BUTTON"    
     When I wait for 3 seconds
-
     Then I scroll until I find the element located by "CALCULATE_BUTTON"
     Then the button located by "CALCULATE_BUTTON" should be enabled
-
     Then the button located by "EXPORT_BUTTON" should be disabled
     When I wait for 3 seconds
-
     Then the element located by "OBJ1_ERROR" should contain the text "Obj 1 is out of range (0-10)."
     Then the element located by "DES1_ERROR" should contain the text "Des 1 is out of range (0-15)."
     Then the element located by "ASSIGN1_ERROR" should contain the text "Assign 1 is out of range (0-5)."
@@ -277,10 +252,6 @@ Feature: The Internet Guinea Pig Website
     When I wait for 3 seconds
     Then the element located by "DES2_ERROR" should contain the text "Des 2 is out of range (0-15)."
     Then the element located by "ASSIGN2_ERROR" should contain the text "Assign 2 is out of range (0-5)."
-
-
-
-
 
     Examples:
       | MID1_OBJ | MID2_OBJ | MID1_DES | MID2_DES | MID1_ASSIGN | MID2_ASSIGN |
@@ -303,16 +274,11 @@ Feature: The Internet Guinea Pig Website
     Then I click on the element located by "MID2_ASSIGN_INPUT2"
     Then I pass the value "<MID2_ASSIGN>" to the element located by "MID2_ASSIGN_INPUT2"
     Then the element located by "CALCULATE_BUTTON" should contain the text "Calculate Internal Marks"
-    Then I click on the element located by "CALCULATE_BUTTON"
-    Then I should take a screenshot
+    Then I click on the element located by "CALCULATE_BUTTON"    
     When I wait for 3 seconds
-
     Then the element located by "<ERROR_ELEMENT>" should contain the text "<ERROR_MESSAGE>"
-
     Then I scroll until I find the element located by "CALCULATE_BUTTON"
-    Then the button located by "CALCULATE_BUTTON" should be enabled
-
-    When I wait for 3 seconds
+    Then the button located by "CALCULATE_BUTTON" should be enabled    When I wait for 3 seconds
 
 
     Examples:
@@ -341,9 +307,7 @@ Feature: The Internet Guinea Pig Website
     Then I click on the element located by "MID2_ASSIGN_INPUT2"
     Then I pass the value "<MID2_ASSIGN>" to the element located by "MID2_ASSIGN_INPUT2"
     Then I click on the element located by "CALCULATE_BUTTON"
-
-    When I wait for 3 seconds
-    Then I scroll until I find the element located by "obj1Result"
+    When I wait for 5 seconds
     Then the element located by "obj1Result" should contain the text "<obj1>"
     Then the element located by "obj2Result" should contain the text "<obj2>"
     Then the element located by "des1Result" should contain the text "<des1>"
@@ -358,14 +322,49 @@ Feature: The Internet Guinea Pig Website
     Then the element located by "mid20Result" should contain the text "<mid_20>"
     Then the element located by "finalInternalMarksResult" should contain the text "<final_internal_marks>"
     Then the element located by "ceilFinalInternalMarksResult" should contain the text "<ceil_final_internal_marks>"
-    Then I should take a screenshot
+    
 
 
     Examples:
       | MID1_OBJ | MID2_OBJ | MID1_DES | MID2_DES | MID1_ASSIGN | MID2_ASSIGN | obj1 | obj2 | des1 | des2 | assign1 | assign2 | mid1 | mid2 | best_mid | least_mid | mid_80 | mid_20 | final_internal_marks | ceil_final_internal_marks |
       | 8        | 10       | 12       | 13       | 4           | 3           | 8    | 10   | 12   | 13   | 4       | 3       | 24   | 26   | 26       | 24        | 20.8   | 4.8    | 25.6                 | 26.0                      |
       | 7        | 9        | 10       | 11       | 5           | 4           | 7    | 9    | 10   | 11   | 5       | 4       | 22   | 24   | 24       | 22        | 19.2   | 4.4    | 23.6                 | 24.0                      |
-      | 6        | 8        | 13       | 14       | 4           | 3           | 6    | 8    | 13   | 14   | 4       | 3       | 23   | 25   | 25       | 23        | 20     | 4.6    | 24.6                 | 25                        |
+      | 6        | 8        | 13       | 14       | 4           | 3           | 6    | 8    | 13   | 14   | 4       | 3       | 23   | 25   | 25       | 23        | 20.0   | 4.6    | 24.6                 | 25.0                      |
       | 9        | 10       | 15       | 13       | 5           | 5           | 9    | 10   | 15   | 13   | 5       | 5       | 29   | 28   | 29       | 28        | 23.2   | 5.6    | 28.8                 | 29.0                      |
-      | 10       | 9        | 14       | 12       | 5           | 4           | 10   | 9    | 14   | 12   | 5       | 4       | 29   | 25   | 29       | 25        | 23.2   | 5      | 28.2                 | 29.0                      |
-      | 6        | 7        | 10       | 9        | 3           | 3           | 6    | 7    | 10   | 9    | 3       | 3       | 19   | 19   | 19       | 19        | 15.2   | 3.8    | 19                   | 19                        |
+      | 10       | 9        | 14       | 12       | 5           | 4           | 10   | 9    | 14   | 12   | 5       | 4       | 29   | 25   | 29       | 25        | 23.2   | 5.0    | 28.2                 | 29.0                      |
+      | 6        | 7        | 10       | 9        | 3           | 3           | 6    | 7    | 10   | 9    | 3       | 3       | 19   | 19   | 19       | 19        | 15.2   | 3.8    | 19.0                 | 19.0                      |
+
+
+
+
+
+
+  @Export_to_CSV
+  Scenario Outline: Export to CSV
+    Given I visit the r20 page
+    When I wait for 3 seconds
+    Then I click on the element located by "MID1_OBJ_INPUT1"
+    Then I pass the value "<MID1_OBJ>" to the element located by "MID1_OBJ_INPUT1"
+    Then I click on the element located by "MID2_OBJ_INPUT2"
+    Then I pass the value "<MID2_OBJ>" to the element located by "MID2_OBJ_INPUT2"
+    Then I click on the element located by "MID1_DES_INPUT1"
+    Then I pass the value "<MID1_DES>" to the element located by "MID1_DES_INPUT1"
+    Then I click on the element located by "MID2_DES_INPUT2"
+    Then I pass the value "<MID2_DES>" to the element located by "MID2_DES_INPUT2"
+    Then I click on the element located by "MID1_ASSIGN_INPUT1"
+    Then I pass the value "<MID1_ASSIGN>" to the element located by "MID1_ASSIGN_INPUT1"
+    Then I click on the element located by "MID2_ASSIGN_INPUT2"
+    Then I pass the value "<MID2_ASSIGN>" to the element located by "MID2_ASSIGN_INPUT2"
+    Then the element located by "CALCULATE_BUTTON" should contain the text "Calculate Internal Marks"
+    Then I click on the element located by "CALCULATE_BUTTON"    
+    When I wait for 5 seconds
+    Then I click on the element located by "EXPORT_BUTTON"
+    When I wait for 10 seconds
+    Then I should verify that a CSV file is downloaded    
+    Then I click on the element located by "EXPORT_PDF_BUTTON"
+    When I wait for 13 seconds
+    Then I should verify that a PDF file is downloaded
+
+    Examples:
+      | MID1_OBJ | MID2_OBJ | MID1_DES | MID2_DES | MID1_ASSIGN | MID2_ASSIGN |
+      | 0        | 5        | 0        | 10       | 3           | 4           |

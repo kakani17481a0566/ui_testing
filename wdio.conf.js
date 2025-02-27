@@ -1,3 +1,7 @@
+const path = require('path');
+const fs = require('fs');
+
+
 exports.config = {
     //
     // ====================
@@ -21,7 +25,7 @@ exports.config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './features/**/*.feature'
+               './features/**/*.feature'
     ],
     // Patterns to exclude.
     exclude: [
@@ -50,7 +54,10 @@ exports.config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'chrome'
+        browserName: 'chrome',
+        "goog:chromeOptions": {
+            args: ["--start-maximized"]  // This argument ensures the window starts maximized
+        }
     }],
 
     //
@@ -109,7 +116,7 @@ exports.config = {
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
     framework: 'cucumber',
-
+    
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
@@ -123,34 +130,18 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-      
-   /* reporters: ['spec',
-        ["html-nice", {
-            outputDir: './reports/html-reports/',
-            filename: 'report.html',
-            reportTitle: 'Test Report Title',
-            linkScreenshots: true,
-            //to show the report in a browser when done
-            showInBrowser: true,
-            collapseTests: true,
-            //to turn on screenshots after every test
-            useOnAfterCommandForScreenshot: false,
-        }
-        ]
-    ],*/
-
     reporters: [['allure', {
         outputDir: 'allure-results',
-     //   disableWebdriverStepsReporting: true,
-       // disableWebdriverScreenshotsReporting: true,
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: true,
+        useCucumberStepReporter: true
     }]],
 
 
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: ['./features/step-definitions/steps.js'],
-
+            require: ['./features/step-definitions/steps.js'],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
@@ -168,7 +159,7 @@ exports.config = {
         // <boolean> fail if there are any undefined or pending steps
         strict: false,
         // <string> (expression) only execute the features or scenarios with tags matching the expression
-        tagExpression: '@mid1_headers',
+        tagExpression: '@Export_to_CSV',
         // <number> timeout for step definitions
         timeout: 60000,
         // <boolean> Enable this config to treat undefined definitions as warnings.
@@ -274,8 +265,31 @@ exports.config = {
      * @param {number}             result.duration  duration of scenario in milliseconds
      * @param {object}             context          Cucumber World object
      */
-    // afterStep: function (step, scenario, result, context) {
-    // },
+  // This hook runs after each step
+  afterStep: async function (step, scenario, { error, duration, passed }, context) {
+    // Ensure the screenshots directory exists
+    const screenshotDir = './screenshots';
+    if (!fs.existsSync(screenshotDir)){
+        fs.mkdirSync(screenshotDir);  // Create directory if it doesn't exist
+    }
+
+    // Define screenshot file path (step-specific filename)
+    const screenshotPath = path.join(screenshotDir, `step-${step.line}-${step.name}.png`);
+
+    // Capture screenshot after every step, whether pass or fail
+    await browser.takeScreenshot().then((data) => {
+        // Remove the base64 part from the screenshot data
+        const base64Data = data.replace(/^data:image\/png;base64,/, "");
+
+        // Save the screenshot as a PNG file
+        fs.writeFileSync(path.resolve(screenshotPath), base64Data, 'base64');
+    });
+},
+
+// You can also use before hooks to perform any setup, like creating directories
+
+    
+
     /**
      *
      * Runs after a Cucumber Scenario.
@@ -296,7 +310,7 @@ exports.config = {
      */
     // afterFeature: function (uri, feature) {
     // },
-
+    
     /**
      * Runs after a WebdriverIO command gets executed
      * @param {string} commandName hook command name
