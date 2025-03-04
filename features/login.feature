@@ -1,17 +1,23 @@
 @global
-Feature: The Internet Guinea Pig Website
+Feature: r20 page
 
 
 
   @visit_r20
   Scenario: I visit the r20 page
-    Given I visit the r20 page
+     Given I visit the r20 page
+    When I wait for 3 seconds
+    Then the element located by "Home" should contain the text "Home"
+    Then I click on the element located by "R20_button"
     When I wait for 3 seconds
 
 
   @page_title
   Scenario: The page title should be correct
-    Given I visit the r20 page
+     Given I visit the r20 page
+    When I wait for 3 seconds
+    Then the element located by "Home" should contain the text "Home"
+    Then I click on the element located by "R20_button"
     When I wait for 3 seconds
     Then the element located by "PAGE_TITLE" should contain the text "SRGEC R20 BATCH INTERNAL MARKS CALCULATOR"
 
@@ -20,7 +26,10 @@ Feature: The Internet Guinea Pig Website
 
   @mid1_headers
   Scenario: The MID 1 headers should be correct
-    Given I visit the r20 page
+     Given I visit the r20 page
+    When I wait for 3 seconds
+    Then the element located by "Home" should contain the text "Home"
+    Then I click on the element located by "R20_button"
     When I wait for 3 seconds
     Then the element located by "MID1_HEADER" should contain the text "MID 1"
     Then the element located by "MID1_OBJ_LABEL" should contain the text "Obj 1:"
@@ -31,7 +40,10 @@ Feature: The Internet Guinea Pig Website
 
   @mid2_headers
   Scenario: The MID 2 headers should be correct
-    Given I visit the r20 page
+     Given I visit the r20 page
+    When I wait for 3 seconds
+    Then the element located by "Home" should contain the text "Home"
+    Then I click on the element located by "R20_button"
     When I wait for 3 seconds
     Then the element located by "MID2_HEADER" should contain the text "MID 2"
     Then the element located by "MID2_OBJ_LABEL" should contain the text "Obj 2:"
@@ -42,14 +54,20 @@ Feature: The Internet Guinea Pig Website
 
   @buttons_mid1_obj
   Scenario: The MID 1 Objective input field should be correct
-    Given I visit the r20 page
+     Given I visit the r20 page
+    When I wait for 3 seconds
+    Then the element located by "Home" should contain the text "Home"
+    Then I click on the element located by "R20_button"
     When I wait for 3 seconds
     Then I click on the element located by "MID1_OBJ_INPUT1"
     Then I pass the value "5" to the element located by "MID1_OBJ_INPUT1"
 
   @buttons_mid2_obj
   Scenario: The MID 2 Objective input field should be correct
-    Given I visit the r20 page
+     Given I visit the r20 page
+    When I wait for 3 seconds
+    Then the element located by "Home" should contain the text "Home"
+    Then I click on the element located by "R20_button"
     When I wait for 3 seconds
     Then I click on the element located by "MID2_OBJ_INPUT2"
     Then I pass the value "5" to the element located by "MID2_OBJ_INPUT2"
@@ -57,7 +75,10 @@ Feature: The Internet Guinea Pig Website
 
   @buttons_mid1_des
   Scenario: The MID 1 Descriptive input field should be correct
-    Given I visit the r20 page
+     Given I visit the r20 page
+    When I wait for 3 seconds
+    Then the element located by "Home" should contain the text "Home"
+    Then I click on the element located by "R20_button"
     When I wait for 3 seconds
     Then I click on the element located by "MID1_DES_INPUT1"
     Then I pass the value "5" to the element located by "MID1_DES_INPUT1"
@@ -65,7 +86,10 @@ Feature: The Internet Guinea Pig Website
 
   @buttons_mid2_des
   Scenario: The MID 2 Descriptive input field should be correct
-    Given I visit the r20 page
+     Given I visit the r20 page
+    When I wait for 3 seconds
+    Then the element located by "Home" should contain the text "Home"
+    Then I click on the element located by "R20_button"
     When I wait for 3 seconds
     Then I click on the element located by "MID2_DES_INPUT2"
     Then I pass the value "5" to the element located by "MID2_DES_INPUT2"
@@ -73,7 +97,10 @@ Feature: The Internet Guinea Pig Website
 
   @buttons_mid1_assign
   Scenario: The MID 1 Assignment input field should be correct
-    Given I visit the r20 page
+     Given I visit the r20 page
+    When I wait for 3 seconds
+    Then the element located by "Home" should contain the text "Home"
+    Then I click on the element located by "R20_button"
     When I wait for 3 seconds
     Then I click on the element located by "MID1_ASSIGN_INPUT1"
     Then I pass the value "5" to the element located by "MID1_ASSIGN_INPUT1"
@@ -81,7 +108,10 @@ Feature: The Internet Guinea Pig Website
 
   @buttons_mid2_assign
   Scenario: The MID 2 Assignment input field should be correct
-    Given I visit the r20 page
+     Given I visit the r20 page
+    When I wait for 3 seconds
+    Then the element located by "Home" should contain the text "Home"
+    Then I click on the element located by "R20_button"
     When I wait for 3 seconds
     Then I click on the element located by "MID2_ASSIGN_INPUT2"
     Then I pass the value "5" to the element located by "MID2_ASSIGN_INPUT2"
@@ -89,7 +119,10 @@ Feature: The Internet Guinea Pig Website
 
   @buttons_calculate
   Scenario: The Calculate button should be correct
-    Given I visit the r20 page
+     Given I visit the r20 page
+    When I wait for 3 seconds
+    Then the element located by "Home" should contain the text "Home"
+    Then I click on the element located by "R20_button"
     When I wait for 3 seconds
     Then the element located by "CALCULATE_BUTTON" should contain the text "Calculate Internal Marks"
     Then I click on the element located by "CALCULATE_BUTTON"
@@ -98,7 +131,10 @@ Feature: The Internet Guinea Pig Website
 
   @buttons_reset
   Scenario: The Reset button should be correct
-    Given I visit the r20 page
+     Given I visit the r20 page
+    When I wait for 3 seconds
+    Then the element located by "Home" should contain the text "Home"
+    Then I click on the element located by "R20_button"
     When I wait for 3 seconds
     Then the element located by "RESET_BUTTON" should contain the text "Reset"
     Then I click on the element located by "RESET_BUTTON"
@@ -106,7 +142,10 @@ Feature: The Internet Guinea Pig Website
 
   @buttons_all
   Scenario: All buttons and input fields should be correct
-    Given I visit the r20 page
+     Given I visit the r20 page
+    When I wait for 3 seconds
+    Then the element located by "Home" should contain the text "Home"
+    Then I click on the element located by "R20_button"
     When I wait for 5 seconds
     Then I click on the element located by "MID1_OBJ_INPUT1"
     Then I pass the value "5" to the element located by "MID1_OBJ_INPUT1"
@@ -126,7 +165,10 @@ Feature: The Internet Guinea Pig Website
 
   @buttons_all_correct
   Scenario: All buttons and input fields should display correct values
-    Given I visit the r20 page
+     Given I visit the r20 page
+    When I wait for 3 seconds
+    Then the element located by "Home" should contain the text "Home"
+    Then I click on the element located by "R20_button"
     When I wait for 5 seconds
     Then I click on the element located by "MID1_OBJ_INPUT1"
     Then I pass the value "5" to the element located by "MID1_OBJ_INPUT1"
@@ -158,7 +200,10 @@ Feature: The Internet Guinea Pig Website
 
   @buttons_all_combinations
   Scenario Outline: All buttons and input fields should be correct for all combinations
-    Given I visit the r20 page
+     Given I visit the r20 page
+    When I wait for 3 seconds
+    Then the element located by "Home" should contain the text "Home"
+    Then I click on the element located by "R20_button"
     When I wait for 3 seconds
     Then I click on the element located by "MID1_OBJ_INPUT1"
     Then I pass the value "<MID1_OBJ>" to the element located by "MID1_OBJ_INPUT1"
@@ -193,7 +238,10 @@ Feature: The Internet Guinea Pig Website
 
   @buttons_all_combinations_invalid
   Scenario Outline: All buttons and input fields should handle invalid inputs correctly
-    Given I visit the r20 page
+     Given I visit the r20 page
+    When I wait for 3 seconds
+    Then the element located by "Home" should contain the text "Home"
+    Then I click on the element located by "R20_button"
     When I wait for 3 seconds
     Then I click on the element located by "MID1_OBJ_INPUT1"
     Then I pass the value "<MID1_OBJ>" to the element located by "MID1_OBJ_INPUT1"
@@ -224,7 +272,10 @@ Feature: The Internet Guinea Pig Website
 
   @buttons_all_combinations_invalid_errors_1
   Scenario Outline: All buttons and input fields should display error messages for invalid inputs
-    Given I visit the r20 page
+     Given I visit the r20 page
+    When I wait for 3 seconds
+    Then the element located by "Home" should contain the text "Home"
+    Then I click on the element located by "R20_button"
     When I wait for 3 seconds
     Then I click on the element located by "MID1_OBJ_INPUT1"
     Then I pass the value "<MID1_OBJ>" to the element located by "MID1_OBJ_INPUT1"
@@ -241,7 +292,7 @@ Feature: The Internet Guinea Pig Website
     Then the element located by "CALCULATE_BUTTON" should contain the text "Calculate Internal Marks"
     Then I click on the element located by "CALCULATE_BUTTON"    
     When I wait for 3 seconds
-    Then I scroll until I find the element located by "CALCULATE_BUTTON"
+    
     Then the button located by "CALCULATE_BUTTON" should be enabled
     Then the button located by "EXPORT_BUTTON" should be disabled
     When I wait for 3 seconds
@@ -259,7 +310,10 @@ Feature: The Internet Guinea Pig Website
 
   @buttons_all_combinations_invalid_errors_2
   Scenario Outline: All buttons and input fields should display error messages for invalid inputs
-    Given I visit the r20 page
+     Given I visit the r20 page
+    When I wait for 3 seconds
+    Then the element located by "Home" should contain the text "Home"
+    Then I click on the element located by "R20_button"
     When I wait for 3 seconds
     Then I click on the element located by "MID1_OBJ_INPUT1"
     Then I pass the value "<MID1_OBJ>" to the element located by "MID1_OBJ_INPUT1"
@@ -278,7 +332,8 @@ Feature: The Internet Guinea Pig Website
     When I wait for 3 seconds
     Then the element located by "<ERROR_ELEMENT>" should contain the text "<ERROR_MESSAGE>"
     Then I scroll until I find the element located by "CALCULATE_BUTTON"
-    Then the button located by "CALCULATE_BUTTON" should be enabled    When I wait for 3 seconds
+    Then the button located by "CALCULATE_BUTTON" should be enabled    
+    When I wait for 3 seconds
 
 
     Examples:
@@ -292,7 +347,10 @@ Feature: The Internet Guinea Pig Website
 
   @result_check
   Scenario Outline: To check result for MID1_OBJ, MID2_OBJ, MID1_DES, MID2_DES, MID1_ASSIGN, and MID2_ASSIGN
-    Given I visit the r20 page
+     Given I visit the r20 page
+    When I wait for 3 seconds
+    Then the element located by "Home" should contain the text "Home"
+    Then I click on the element located by "R20_button"
     When I wait for 3 seconds
     Then I click on the element located by "MID1_OBJ_INPUT1"
     Then I pass the value "<MID1_OBJ>" to the element located by "MID1_OBJ_INPUT1"
@@ -320,6 +378,8 @@ Feature: The Internet Guinea Pig Website
     Then the element located by "leastMidResult" should contain the text "<least_mid>"
     Then the element located by "mid80Result" should contain the text "<mid_80>"
     Then the element located by "mid20Result" should contain the text "<mid_20>"
+    Then I scroll until I find the element located by "finalInternalMarksResult"
+
     Then the element located by "finalInternalMarksResult" should contain the text "<final_internal_marks>"
     Then the element located by "ceilFinalInternalMarksResult" should contain the text "<ceil_final_internal_marks>"
     
@@ -341,7 +401,10 @@ Feature: The Internet Guinea Pig Website
 
   @Export_to_CSV
   Scenario Outline: Export to CSV
-    Given I visit the r20 page
+     Given I visit the r20 page
+    When I wait for 3 seconds
+    Then the element located by "Home" should contain the text "Home"
+    Then I click on the element located by "R20_button"
     When I wait for 3 seconds
     Then I click on the element located by "MID1_OBJ_INPUT1"
     Then I pass the value "<MID1_OBJ>" to the element located by "MID1_OBJ_INPUT1"

@@ -140,11 +140,6 @@ Then(/^I scroll until I find the element located by "(.*?)"$/, async (locatorKey
 });
 
 
-// Generate the timestamp before using it in the screenshot path
-const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-
-// Ensure the screenshots directory exists
-
 
 
 

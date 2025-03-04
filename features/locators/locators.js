@@ -1,17 +1,23 @@
 export default {
-    loginPage: {
-        // Username input field
-        usernameInput: '//*[@id="username"]',
-        // Password input field
-        passwordInput: '//*[@id="password"]',
-        // Login button
-        loginButton: '//*[@id="login"]',
-    },
-    securePage: {
-        // Flash alert message
-        flashAlert: '//*[@id="flash"]',
-    },
+    
+    // Home Page Locators
+    homePage: { 
+        //h2[text()='SRGEC INTERNAL MARKS CALCULATOR']
+        Home_page_header: "//h2[contains(text(), 'SRGEC INTERNAL MARKS CALCULATOR')]",
+        Home : "//a[@id='btn-Home']",
+        R20_button : "//a[@id='btn-r20']",
+        R23_button : "//a[@id='btn-r23']",
+        MBA_button : "//a[@id='btn-MBA']" ,
+        R23_PAGE_HEADER: "//h1[contains(text(), 'SRGEC R23 BATCH INTERNAL MARKS CALCULATOR')]",
+
+
+    },   
+    
     r20Page: {
+
+
+        //h1[text()='SRGEC R23 BATCH INTERNAL MARKS CALCULATOR']
+       
         // Page header
         header: '/html/body/h1',
         // Page title
